@@ -1,6 +1,9 @@
+# Build directories
+
 build-scan-build/
 build-llvm/
 build-gcc/
+build-vc/
 
 # Vim
 
@@ -458,3 +461,4 @@ __pycache__/
 
 # Cake - Uncomment if you are using it
 # tools/
+
