@@ -1,5 +1,6 @@
 # Build directories
 
+build-xcode/
 build-scan-build/
 build-llvm/
 build-gcc/
