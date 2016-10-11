@@ -17,6 +17,8 @@
 #include <string>
 
 #include "Test_1_1_Greeter.h"
+#include "Test_1_2_Greeter.h"
+
 #include "gtest/gtest.h"
 using namespace std;
 
@@ -29,6 +31,20 @@ TEST(Objects, SimpleObject)
 {
     const string expected = "Hello Name!";
     Test_1_1_Greeter greeter;
+    EXPECT_EQ(expected, greeter.greet());
+
+}
+
+/**
+ * 1.2: Implement a class Test_1_2_Greeter with a constructor taking a string as
+ *      argument and returning the string "Hello <argument>!" where <argument> is
+ *      replaces by the string sent to the constructor.
+ */
+
+TEST(Objects, T1_2_Greeter)
+{
+    const string expected = "Hello Balp!";
+    Test_1_2_Greeter greeter("Balp");
     EXPECT_EQ(expected, greeter.greet());
 
 }
