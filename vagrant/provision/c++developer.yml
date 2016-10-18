@@ -1,0 +1,7 @@
+---
+- hosts: developer
+  roles:
+    - { role: fqdn, become: yes }
+    - common
+    - buildtools
+    - ide

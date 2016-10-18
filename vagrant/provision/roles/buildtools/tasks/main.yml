@@ -1,0 +1,17 @@
+---
+- name: Add standard develpment packages
+  apt: name={{ item.pkg }} state=present
+  become: yes
+  with_items:
+    - { pkg: "build-essential" }
+    - { pkg: "clang-3.8" }
+    - { pkg: "cmake" }
+    - { pkg: "git" }
+    - { pkg: "vim-gnome" }
+    - { pkg: "emacs" }
+
+- name: Download extra packages
+  apt: deb={{ item.deb }} state=present allow_unauthenticated=yes
+  become: yes
+  with_items:
+    - { deb: "https://atom.io/download/deb" }
