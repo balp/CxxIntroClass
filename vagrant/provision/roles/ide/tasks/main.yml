@@ -1,4 +1,10 @@
 ---
+- name: Set password so user can log in
+  user:
+    name: ubuntu
+    password: $6$2v6mnZaYft2fXU8$EoxxEdNwk1y5MLDXlOt94DsBmOBnsY8JNQpqoJcry2yHAzGcdmUxK/AFI7j./zYuaOBTJftseTI2gBbjDXk5q/
+  become: yes
+
 - name: Add X environment
   apt: name={{ item.pkg }} state=present
   become: yes
@@ -17,4 +23,4 @@
   unarchive:
     src: /var/tmp/CLion-2016.2.2.tar.gz
     dest: /home/ubuntu
-
+    creates: /home/ubuntu/clion-2016.2.2
