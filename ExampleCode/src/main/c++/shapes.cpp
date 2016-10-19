@@ -1,4 +1,5 @@
 #include <vector>
+#include <numeric>
 
 class Shape {
     public:
@@ -42,10 +43,8 @@ double area() {
     v.push_back(new Rectangle(2.0,2.0));
     v.push_back(new Triangle(2.0,2.0));
     v.push_back(new Circle(3.0));
-    double area = 0;
-    for(auto &s : v) {
-      area += s->area();
-    }
-    return area;
+    return std::accumulate(v.begin(), v.end(), 0.0,
+                           [](double a, Shape* b) { return a + b->area();}
+                           );
 }
 
