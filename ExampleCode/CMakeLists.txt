@@ -9,7 +9,10 @@ add_library( hello
     src/main/c++/lifetime.hpp
 )
 
-add_executable ( hellotest src/test/c++/hellotest.cpp )
+add_executable ( hellotest
+    src/test/c++/hellotest.cpp
+    src/test/c++/scope.cpp
+)
 target_link_libraries( hellotest hello gtest gtest_main )
 
 add_test(NAME hellotest COMMAND $<TARGET_FILE:hellotest> )

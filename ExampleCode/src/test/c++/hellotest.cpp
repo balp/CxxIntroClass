@@ -100,3 +100,15 @@ TEST(lifetime, polly) {
         delete p;
     }
 }
+
+TEST(lifetime, one) {
+    LifeTimeA a;
+    LifeTimeA* p = new LifeTimeA();
+    delete p;
+}
+
+TEST(lifetime, loop) {
+    for (int i = 0; i < 10 ; ++i) {
+        LifeTimeA a;
+    }
+}
