@@ -18,6 +18,7 @@
 
 #include "hello.hpp"
 #include "iterator.hpp"
+#include "lifetime.hpp"
 #include "gtest/gtest.h"
 
 double area();
@@ -51,4 +52,51 @@ int iterator_sum()
         
     }
     return r;
+}
+
+
+TEST(lifetime, nonevirtual) {
+    {
+        LifeTimeA *p = new LifeTimeA();
+        delete p;
+    }
+    {
+        LifeTimeA *p = new LifeTimeB();
+        delete p;
+    }
+    {
+        LifeTimeB *p = new LifeTimeB();
+        delete p;
+    }
+    {
+        LifeTimeA *p = new LifeTimeC();
+        delete p;
+    }
+    {
+        LifeTimeC *p = new LifeTimeC();
+        delete p;
+    }
+}
+
+TEST(lifetime, polly) {
+    {
+        PollyTimeA *p = new PollyTimeA();
+        delete p;
+    }
+    {
+        PollyTimeA *p = new PollyTimeB();
+        delete p;
+    }
+    {
+        PollyTimeB *p = new PollyTimeB();
+        delete p;
+    }
+    {
+        PollyTimeA *p = new PollyTimeC();
+        delete p;
+    }
+    {
+        PollyTimeC *p = new PollyTimeC();
+        delete p;
+    }
 }

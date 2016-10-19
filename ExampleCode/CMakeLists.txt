@@ -5,6 +5,8 @@ add_library( hello
     src/main/c++/hello.hpp
     src/main/c++/iterator.cpp
     src/main/c++/iterator.hpp
+    src/main/c++/lifetime.cpp
+    src/main/c++/lifetime.hpp
 )
 
 add_executable ( hellotest src/test/c++/hellotest.cpp )
