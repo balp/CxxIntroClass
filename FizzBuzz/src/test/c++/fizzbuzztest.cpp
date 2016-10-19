@@ -23,7 +23,24 @@ TEST(fizzbuzz, test_one)
 {
     EXPECT_EQ("1", fizzbuzz(1));
 }
+
 TEST(fizzbuzz, test_two)
 {
     EXPECT_EQ("2", fizzbuzz(2));
 }
+
+TEST(fizzbuzz, test_tree)
+{
+    EXPECT_EQ("fizz", fizzbuzz(3));
+}
+
+TEST(fizzbuzz, test_five)
+{
+    EXPECT_EQ("buzz", fizzbuzz(5));
+}
+
+TEST(fizzbuzz, test_fithteen)
+{
+    EXPECT_EQ("fizzbuzz", fizzbuzz(15));
+}
+
