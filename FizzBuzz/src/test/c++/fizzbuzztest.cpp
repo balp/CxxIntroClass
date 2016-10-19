@@ -16,21 +16,14 @@
 
 #include <string>
 
-#include "hello.h"
+#include "fizzbuzz.h"
 #include "gtest/gtest.h"
 
-double area();
-
-using namespace std;
-
-TEST(BasicTest, ReturnsHelloWorld)
+TEST(fizzbuzz, test_one)
 {
-  const string expected = "Hello World!";
-  const Hello hello;
-  EXPECT_EQ(expected, hello.greeting());
+    EXPECT_EQ("1", fizzbuzz(1));
 }
-
-TEST(AreaTest, simple)
+TEST(fizzbuzz, test_two)
 {
-    EXPECT_EQ(24.84, area());
+    EXPECT_EQ("2", fizzbuzz(2));
 }

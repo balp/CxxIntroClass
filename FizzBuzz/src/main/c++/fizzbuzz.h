@@ -14,23 +14,12 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+#ifndef FIZZBUZZ_H
+#define FIZZBUZZ_H
+
 #include <string>
 
-#include "hello.h"
-#include "gtest/gtest.h"
+std::string fizzbuzz(int number);
 
-double area();
+#endif // FIZZBUZZ_H
 
-using namespace std;
-
-TEST(BasicTest, ReturnsHelloWorld)
-{
-  const string expected = "Hello World!";
-  const Hello hello;
-  EXPECT_EQ(expected, hello.greeting());
-}
-
-TEST(AreaTest, simple)
-{
-    EXPECT_EQ(24.84, area());
-}

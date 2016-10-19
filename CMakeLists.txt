@@ -13,4 +13,5 @@ enable_testing()
 
 
 add_subdirectory (ExampleCode)
+add_subdirectory (FizzBuzz)
 
