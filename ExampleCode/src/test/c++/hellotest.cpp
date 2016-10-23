@@ -34,6 +34,10 @@ TEST(BasicTest, ReturnsHelloWorld)
 
 TEST(AreaTest, simple)
 {
+    std::string a = "a";
+    std::string b = "b";
+    std::string ab = a + b;
+    
     EXPECT_EQ(24.84, area());
 }
 

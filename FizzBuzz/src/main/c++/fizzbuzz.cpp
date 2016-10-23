@@ -1,25 +1,26 @@
 #include <string>
 #include "fizzbuzz.h"
 
-namespace {
-    class FizzBuzz {
-    public:
-        static std::string fizzbuzz(int number) {
-            if ((number % 5) == 0 && (number % 3) == 0) {
-                return "fizzbuzz";
-            }
-            if ((number % 5) == 0) {
-                return "buzz";
-            }
-            if ((number % 3) == 0) {
-                return "fizz";
-            }
-            return std::to_string(number);
-        }
-    };
+inline static bool diviable_by_five(int number) {
+    return ( number % 5 ) == 0;
 }
+
+inline static bool diviable_by_three(int number) {
+    return ( number % 3 ) == 0;
+}
+
 
 std::string fizzbuzz(int number)
 {
-    return FizzBuzz::fizzbuzz(number);
+    if( diviable_by_five(number)
+       && diviable_by_three(number)) {
+        return "fizzbuzz";
+    }
+    if(diviable_by_five(number)) {
+        return "buzz";
+    }
+    if(diviable_by_three(number)) {
+        return "fizz";
+    }
+    return std::to_string(number);
 }

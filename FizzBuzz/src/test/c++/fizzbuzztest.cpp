@@ -19,28 +19,27 @@
 #include "fizzbuzz.h"
 #include "gtest/gtest.h"
 
-TEST(fizzbuzz, test_one)
+TEST(fizzbuzz, one)
 {
     EXPECT_EQ("1", fizzbuzz(1));
 }
 
-TEST(fizzbuzz, test_two)
-{
-    EXPECT_EQ("2", fizzbuzz(2));
-}
-
-TEST(fizzbuzz, test_tree)
+TEST(fizzbuzz, three)
 {
     EXPECT_EQ("fizz", fizzbuzz(3));
 }
 
-TEST(fizzbuzz, test_five)
+TEST(fizzbuzz, five)
 {
     EXPECT_EQ("buzz", fizzbuzz(5));
 }
 
-TEST(fizzbuzz, test_fithteen)
+TEST(fizzbuzz, six)
+{
+    EXPECT_EQ("fizz", fizzbuzz(6));
+}
+
+TEST(fizzbuzz, fifteen)
 {
     EXPECT_EQ("fizzbuzz", fizzbuzz(15));
 }
-
