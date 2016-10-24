@@ -19,6 +19,7 @@
 #include "hello.hpp"
 #include "iterator.hpp"
 #include "lifetime.hpp"
+#include "Templates.hpp"
 #include "gtest/gtest.h"
 
 double area();
@@ -115,4 +116,38 @@ TEST(lifetime, loop) {
     for (int i = 0; i < 10 ; ++i) {
         LifeTimeA a;
     }
+}
+
+TEST(vector_template, intvector)
+{
+    std::vector<int> v = {3,2,1};
+    EXPECT_EQ(1, Templates::min(v));
+}
+
+TEST(stack_template, top)
+{
+    Templates::Stack<int> intStack;
+    intStack.push(1);
+    EXPECT_EQ(1, intStack.top());
+}
+
+TEST(stack_template, pop_empty_stack)
+{
+    Templates::Stack<int> intStack;
+    intStack.push(1);
+    EXPECT_EQ(1, intStack.top());
+    intStack.pop();
+    ASSERT_THROW(intStack.top(), std::out_of_range);
+}
+
+TEST(stack_template, is_stack)
+{
+    Templates::Stack<int> intStack;
+    intStack.push(1);
+    intStack.push(2);
+    EXPECT_EQ(2, intStack.top());
+    intStack.pop();
+    EXPECT_EQ(1, intStack.top());
+    intStack.pop();
+    ASSERT_THROW(intStack.top(), std::out_of_range);
 }

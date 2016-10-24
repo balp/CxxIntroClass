@@ -7,6 +7,8 @@ add_library( hello
     src/main/c++/iterator.hpp
     src/main/c++/lifetime.cpp
     src/main/c++/lifetime.hpp
+    src/main/c++/Templates.cpp
+    src/main/c++/Templates.hpp
 )
 
 add_executable ( hellotest
