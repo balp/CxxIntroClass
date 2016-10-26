@@ -20,7 +20,8 @@
 #include "iterator.hpp"
 #include "lifetime.hpp"
 #include "Templates.hpp"
-#include "gtest/gtest.h"
+
+#include <gtest/gtest.h>
 
 double area();
 
@@ -121,7 +122,11 @@ TEST(lifetime, loop) {
 TEST(vector_template, intvector)
 {
     std::vector<int> v = {3,2,1};
+    
     EXPECT_EQ(1, Templates::min(v));
+    
+    std::vector<float> v2 = {4.5, 6.6, 8, 0.11};
+    EXPECT_NEAR(0.11, Templates::min(v2), 0.00001);
 }
 
 TEST(stack_template, top)

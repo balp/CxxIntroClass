@@ -27,20 +27,24 @@ namespace Templates {
     private:
         std::vector<T> elems;
     public:
-        void push(T const&);
+        void push(T const& elem)     {
+            // append copy of passed element
+            elems.push_back(elem);
+        }
         void pop();
         T top() const;
         bool empty() const{
             return elems.empty();
         } 
     };
-    
+#if 0
     template <class T>
     void Stack<T>::push (T const& elem)
     {
         // append copy of passed element
         elems.push_back(elem);
     }
+#endif
     
     template <class T>
     void Stack<T>::pop ()
@@ -62,7 +66,7 @@ namespace Templates {
         return elems.back();      
     }
     
-    template<typename T>
+    template<typename>
     struct is_void : std::false_type
     {
     };

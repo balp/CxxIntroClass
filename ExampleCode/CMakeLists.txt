@@ -15,6 +15,7 @@ add_executable ( hellotest
     src/test/c++/hellotest.cpp
     src/test/c++/scope.cpp
     src/test/c++/collections.cpp
+    src/test/c++/algoritms.cpp
 )
 target_link_libraries( hellotest hello gtest gtest_main )
 

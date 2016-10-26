@@ -19,6 +19,39 @@
 #include "fizzbuzz.h"
 #include "gtest/gtest.h"
 
+struct pair {
+    int a;
+    int b;
+    pair() : a(0), b(1) {}
+};
+class iTestable {
+public:
+    virtual bool test() =0;
+};
+class a : public pair, iTestable {
+public:
+    virtual bool test() { return true; }
+};
+class c : public a {
+public:
+    
+};
+
+class Testing {
+public:
+    Testing() {_init();}
+    Testing(int a) {_init();}
+    
+    int a()  { return 0;}
+    void a(int a) { _a = a; }
+private:
+    int _a;
+    void _init() {}
+};
+
+
+
+
 TEST(fizzbuzz, one)
 {
     EXPECT_EQ("1", fizzbuzz(1));
