@@ -61,6 +61,16 @@ namespace Templates {
         // return copy of last element 
         return elems.back();      
     }
+    
+    template<typename T>
+    struct is_void : std::false_type
+    {
+    };
+    
+    template<>
+    struct is_void<void> : std::true_type
+    {
+    };
 }
 
 
