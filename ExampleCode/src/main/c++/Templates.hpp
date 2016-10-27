@@ -72,7 +72,7 @@ namespace Templates {
     };
     
     template<>
-    struct is_void<void> : std::true_type
+    struct is_void<int> : std::true_type
     {
     };
 }

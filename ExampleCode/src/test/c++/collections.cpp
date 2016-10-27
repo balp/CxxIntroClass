@@ -23,6 +23,11 @@ TEST(array, arrayexample) // C++11
     EXPECT_EQ(0, int_array2[5]); // No bounds checking!!!
     //EXPECT_EQ(0, int_array2.at(5)); // Out of bound error
     EXPECT_THROW(int_array2.at(5), std::out_of_range);
+    
+    std::array<std::array<int, 5>, 2> int_array3
+        = {{{{1,2,3,4,5}}, {{1,2,3,4,5}}}};
+    EXPECT_EQ(2, int_array3.size());
+    int_array3[1][4];
 }
 
 TEST(vector, vectorexample)
