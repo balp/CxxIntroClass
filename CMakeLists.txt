@@ -1,4 +1,4 @@
-# Set to the current lowest tested version of CMake
+#Set to the current lowest tested version of CMake
 cmake_minimum_required (VERSION 3.2.2)
 project (BasicCppEnvironment)
 if(NOT MSVC)
@@ -14,4 +14,5 @@ enable_testing()
 
 add_subdirectory (ExampleCode)
 add_subdirectory (FizzBuzz)
+add_subdirectory (StringCalculator)
 
