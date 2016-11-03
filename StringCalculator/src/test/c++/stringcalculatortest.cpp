@@ -18,6 +18,39 @@
 
 #include <gtest/gtest.h>
 
+
+TEST(stringcalc, emptystring)
+{
+    StringCalculator calc;
+    EXPECT_EQ(0, calc.calc(""));
+}
+
+TEST(stringcalc, add_1)
+{
+    StringCalculator calc;
+    EXPECT_EQ(1, calc.calc("1"));
+    
+}
+
+TEST(stringcalc, add_1_1)
+{
+    StringCalculator calc;
+    EXPECT_EQ(2, calc.calc("1,1"));
+    
+}
+
+TEST(stringcalc, add_2_1)
+{
+    StringCalculator calc;
+    EXPECT_EQ(3, calc.calc("2,1"));
+    
+}
+
+
+
+
+
+#if 0
 TEST(stringcalc, emptystring)
 {
     StringCalculator calc;
@@ -36,3 +69,4 @@ TEST(stringcalc, calc_1_1_2)
     StringCalculator calc;
     EXPECT_EQ(2, calc.calc("1,1"));
 }
+#endif

@@ -16,6 +16,10 @@ add_executable ( hellotest
     src/test/c++/scope.cpp
     src/test/c++/collections.cpp
     src/test/c++/algoritms.cpp
+    src/test/c++/const.cpp
+    src/test/c++/constexpr.cpp
+    src/test/c++/value.cpp
+    src/test/c++/exception.cpp
 )
 target_link_libraries( hellotest hello gtest gtest_main )
 

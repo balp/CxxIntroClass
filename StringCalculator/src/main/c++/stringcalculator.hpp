@@ -21,8 +21,43 @@
 #include <vector>
 #include <numeric>
 
-// using namespace std;
 
+
+class StringCalculator {
+public:
+    int calc(std::string input) {
+        if (input.empty()) {
+            return 0;
+        }
+        std::vector<std::string> tokenized;
+        int result = 0;
+        std::string::size_type prev_pos = 0;
+        std::string::size_type pos = 0;
+        while( (pos = input.find(',', pos))
+              != std::string::npos ) {
+            std::string number(input.substr(prev_pos, pos-prev_pos));
+            tokenized.push_back(number);
+            prev_pos = ++pos;
+            
+        }
+        tokenized.push_back(std::string(input.substr(prev_pos,
+                                                     pos-prev_pos)));
+        for (auto str : tokenized) {
+            result += std::stoi(str);
+        }
+        return result;
+    }
+};
+
+
+
+
+
+
+
+
+
+#if 0
 class StringCalculator {
 public:
     int calc(std::string input) {
@@ -49,5 +84,5 @@ private:
         return result;
     }
 };
-
+#endif
 #endif // STRINGCALCULATOR_H
