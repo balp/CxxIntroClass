@@ -1,6 +1,0 @@
----
-- name: Add basic packages for Ansible
-  apt: name={{ item.pkg }} state=present
-  become: yes
-  with_items:
-    - { pkg: "python-pip" }
