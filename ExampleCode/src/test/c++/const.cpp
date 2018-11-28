@@ -10,7 +10,7 @@
 
 namespace  {
     const int int_func() {
-        return 0;
+        return 3;
     }
     
     class A {
@@ -76,5 +76,5 @@ TEST(constants, classobjects)
     mya.a = 2;
     EXPECT_EQ(2, mya.a);
     const A& mya2 = two.get_a();
-    EXPECT_EQ(2, mya2.a);
+    EXPECT_EQ(0, mya2.a);
 }

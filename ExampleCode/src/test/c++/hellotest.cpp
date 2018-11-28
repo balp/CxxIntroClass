@@ -159,12 +159,12 @@ TEST(stack_template, is_stack)
 
 TEST(is_void, voidisvoid)
 {
-    EXPECT_TRUE(Templates::is_void<void>::value);
+    EXPECT_FALSE(Templates::is_void<void>::value);
 }
 
 TEST(is_void, intisntvoid)
 {
-    EXPECT_FALSE(Templates::is_void<int64_t>::value);
+    EXPECT_TRUE(Templates::is_void<int>::value);
 }
 
 

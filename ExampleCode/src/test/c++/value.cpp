@@ -49,7 +49,7 @@ int add_ptr(int* i)
 
 TEST(ptr, one)
 {
-    int i;
+    int i = 1;
     int* ptr_i = &i;
     
     EXPECT_EQ(ptr_i, &i);
@@ -77,6 +77,6 @@ TEST(dynmemory, new_)
     
     std::unique_ptr<object> optr(new object());
     std::unique_ptr<object> optr2(std::move(optr));
-    EXPECT_NE(nullptr, optr);
+    EXPECT_EQ(nullptr, optr);
     // delete optr;
 }

@@ -20,7 +20,7 @@ TEST(array, arrayexample) // C++11
     std::array<int, 5> int_array2 = {{1,2,3}};
     EXPECT_EQ(5, int_array2.size());
     EXPECT_EQ(0, int_array2[4]);
-    EXPECT_EQ(0, int_array2[5]); // No bounds checking!!!
+    //EXPECT_EQ(0, int_array2[5]); // No bounds checking!!!
     //EXPECT_EQ(0, int_array2.at(5)); // Out of bound error
     EXPECT_THROW(int_array2.at(5), std::out_of_range);
     

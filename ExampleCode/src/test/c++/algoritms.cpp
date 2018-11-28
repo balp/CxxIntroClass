@@ -21,17 +21,29 @@ TEST(vector, accumulate)
                               1,
                             [](int &a, int &b){return a+b;}
                               );
-    EXPECT_EQ(45, sum);
+    EXPECT_EQ(56, sum);
+}
+
+TEST(vector, accumulate_newloop)
+{
+    std::vector<int> int_vector = {1,2,3,4,5,6,7,8,9,10};
     int sum2 = 0;
     for( auto n : int_vector) {
         sum2 += n;
     }
-    EXPECT_EQ(45, sum2);
+    EXPECT_EQ(55, sum2);
+}
+
+TEST(vector, accumulate_oldloop)
+{
+    std::vector<int> int_vector = {1,2,3,4,5,6,7,8,9,10};
+    int sum3 = 0;
     for( auto iter = int_vector.begin();
         iter != int_vector.end();
         ++iter) {
-        
+        sum3 += *iter;
     }
+    EXPECT_EQ(55, sum3);
     
     
 }

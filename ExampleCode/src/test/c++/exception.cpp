@@ -19,8 +19,8 @@ namespace {
     class A {
     public:
         A() {
-            char str[] = "";
-            throw std::out_of_range(str);
+            // char str[] = "";
+            throw myException();
         }
     };
 }
@@ -28,13 +28,12 @@ namespace {
 TEST(myexception, raise)
 {
     EXPECT_THROW(throw myException(), myException);
-    
+#if 0 
+    A a;
+
     try {
         throw std::out_of_range("");
     } catch (std::out_of_range ex) {
-        
-        
     }
-    A a;
-    
+#endif 
 }

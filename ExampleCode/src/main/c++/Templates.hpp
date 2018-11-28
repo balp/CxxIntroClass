@@ -9,6 +9,7 @@
 #ifndef Templates_hpp
 #define Templates_hpp
 #include <vector>
+#include <stdexcept>
 
 namespace Templates {
     template <typename T>
